@@ -1,0 +1,95 @@
+# Azure Environment Variables Template for Omniplex
+# Copy these to your Azure App Service Configuration
+
+# ===========================================
+# APPLICATION SETTINGS
+# ===========================================
+NODE_ENV=production
+WEBSITES_PORT=3000
+WEBSITES_ENABLE_APP_SERVICE_STORAGE=false
+SCM_DO_BUILD_DURING_DEPLOYMENT=true
+ENABLE_ORYX_BUILD=true
+
+# ===========================================
+# NEXT.JS CONFIGURATION
+# ===========================================
+NEXTAUTH_URL=https://omniplex-app.azurewebsites.net
+NEXTAUTH_SECRET=your-nextauth-secret-key-here
+
+# ===========================================
+# FIREBASE CONFIGURATION
+# ===========================================
+NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+
+# ===========================================
+# STRIPE CONFIGURATION (PRODUCTION KEYS)
+# ===========================================
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_your_production_publishable_key
+STRIPE_SECRET_KEY=sk_live_your_production_secret_key
+STRIPE_WEBHOOK_SECRET=whsec_your_production_webhook_secret
+
+# Production Product IDs (replace with actual Stripe product IDs)
+STRIPE_PRODUCT_ID_PRO_MONTHLY=price_production_pro_monthly
+STRIPE_PRODUCT_ID_PRO_YEARLY=price_production_pro_yearly
+
+# ===========================================
+# AI/API SERVICES CONFIGURATION
+# ===========================================
+OPENAI_API_KEY=your-openai-api-key
+GEMINI_API_KEY=your-gemini-api-key
+
+# ===========================================
+# ADDITIONAL CONFIGURATIONS
+# ===========================================
+# Database connection strings (if using databases)
+# DATABASE_URL=your-database-connection-string
+
+# Redis connection (if using Redis for caching)
+# REDIS_URL=your-redis-connection-string
+
+# Email service configuration (if using email)
+# SMTP_HOST=your-smtp-host
+# SMTP_PORT=587
+# SMTP_USER=your-smtp-user
+# SMTP_PASS=your-smtp-password
+
+# ===========================================
+# SECURITY SETTINGS
+# ===========================================
+# CORS origins for production
+ALLOWED_ORIGINS=https://omniplex-app.azurewebsites.net
+
+# Additional security headers
+FORCE_HTTPS=true
+HSTS_MAX_AGE=31536000
+
+# ===========================================
+# MONITORING & LOGGING
+# ===========================================
+# Application Insights (if using Azure monitoring)
+# APPINSIGHTS_INSTRUMENTATIONKEY=your-app-insights-key
+
+# Log level for production
+LOG_LEVEL=error
+
+# ===========================================
+# PERFORMANCE SETTINGS
+# ===========================================
+# Memory optimization for Azure App Service
+NODE_OPTIONS=--max-old-space-size=1024
+
+# ===========================================
+# INSTRUCTIONS FOR AZURE PORTAL:
+# ===========================================
+# 1. Go to Azure Portal: https://portal.azure.com
+# 2. Navigate to your App Service (omniplex-app)
+# 3. Go to Configuration > Application Settings
+# 4. Click "New application setting" for each variable above
+# 5. Copy the Name and Value from this template
+# 6. Click "Save" after adding all settings
+# 7. Restart the App Service if needed

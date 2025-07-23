@@ -1,0 +1,41 @@
+# Azure App Service Deployment Configuration
+version: 1.0
+
+app_name: omniplex
+resource_group: omniplex-rg
+location: eastus
+sku: B1
+
+# Runtime Configuration
+runtime:
+  name: node
+  version: 18
+
+# Build Configuration
+build:
+  commands:
+    - npm install
+    - npm run build
+  output_directory: .next
+
+# Startup Configuration
+startup:
+  command: npm start
+
+# Environment Variables (will be set via Azure Portal)
+app_settings:
+  - NODE_ENV=production
+  - WEBSITES_PORT=3000
+  - WEBSITES_ENABLE_APP_SERVICE_STORAGE=false
+
+# Health Check
+health_check:
+  path: /api/health
+  timeout: 60
+
+# Scaling Configuration
+auto_scale:
+  min_instances: 1
+  max_instances: 3
+  scale_out_cooldown: 300
+  scale_in_cooldown: 300
