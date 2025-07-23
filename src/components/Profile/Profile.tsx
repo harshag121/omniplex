@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 import { useDisclosure } from "@nextui-org/modal";
 import Delete from "../Delete/Delete";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebaseConfig";
 import { useDispatch, useSelector } from "react-redux";
 import { resetAISettings } from "@/store/aiSlice";
 import { resetChat } from "@/store/chatSlice";
@@ -24,10 +25,13 @@ const Plugins = (props: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleLogout = async () => {
-    const auth = getAuth();
+    if (!auth) {
+      console.warn("Firebase auth not initialized. Cannot logout.");
+      return;
+    }
+    
     try {
       await signOut(auth);
-      await auth.signOut();
       props.close();
       dispatch(resetAISettings());
       dispatch(resetChat());
