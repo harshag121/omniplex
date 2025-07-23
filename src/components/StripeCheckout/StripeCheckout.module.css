@@ -1,0 +1,64 @@
+.stripe-checkout {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.product-info {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.product-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+
+.price-period {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.checkout-button:enabled {
+  background-color: #2563eb;
+  color: white;
+}
+
+.checkout-button:enabled:hover {
+  background-color: #1d4ed8;
+}
+
+.checkout-button:disabled {
+  background-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.test-info {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 16px;
+  text-align: center;
+}

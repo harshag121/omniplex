@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Sidebar.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import History from "../History/History";
 import Library from "../Library/Library";
 import Plugins from "../Plugins/Plugins";
@@ -123,6 +124,14 @@ const Sidebar = () => {
             className={styles.titleButtonIcon}
           />
           <p className={styles.titleButtonText}>New Chat</p>
+        </div>
+        <div style={{ opacity: isSidebarOpen ? 0 : 1, marginLeft: 'auto' }}>
+          <Link 
+            href="/pricing" 
+            className="text-xs text-blue-600 hover:text-blue-800 font-medium px-2 py-1 rounded border border-blue-300 hover:border-blue-500 transition-colors"
+          >
+            Pro
+          </Link>
         </div>
       </div>
       {isSidebarOpen && (

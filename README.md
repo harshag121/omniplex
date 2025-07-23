@@ -43,7 +43,14 @@ OPENAI_API_KEY=
 OPENWEATHERMAP_API_KEY=
 ALPHA_VANTAGE_API_KEY=
 FINNHUB_API_KEY=
+
+# Stripe Configuration (for payment features)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key
+STRIPE_SECRET_KEY=sk_test_your_secret_key
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
 ```
+
+> **Note**: For Stripe integration setup and testing, see [STRIPE_SETUP.md](./STRIPE_SETUP.md) for detailed instructions.
 
 4. Run the development server
 
